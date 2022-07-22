@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import RootStack from "./app/navigation/RootStack";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -10,18 +11,5 @@ export default function App() {
     "Lato-Refular": require("./app/assets/fonts/Lato-Regular.ttf"),
   });
 
-  return (
-    <View style={styles.container}>
-      <WelcomeScreen />
-    </View>
-  );
+  return <RootStack />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
