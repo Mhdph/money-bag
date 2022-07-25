@@ -37,3 +37,15 @@ export interface TransctionAviProps {
   icon: any;
   background: string;
 }
+
+export interface SendMoneyProps {
+  id: number;
+  name: string;
+  amount: string;
+  background: any;
+  img: ImageSourcePropType;
+}
+
+export interface SendMoneySecctionProps {
+  data: Array<SendMoneyProps>;
+}

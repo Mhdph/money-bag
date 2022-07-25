@@ -8,6 +8,10 @@ import logo2 from "../assets/cards/visa_white.png";
 import { StatusBar } from "expo-status-bar";
 import CardsSection from "../components/cards/cardsSection";
 import TransctionSection from "../components/Transactions/TransactionSection";
+import SendMoneySection from "../components/SendMoney/SendMoneySection";
+import portrait1 from "./../assets/portraits/1.jpg";
+import portrait2 from "./../assets/portraits/2.jpg";
+import portrait3 from "./../assets/portraits/3.jpg";
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -65,11 +69,36 @@ const HomeScreen = () => {
     },
   ];
 
+  const sendMoneyData = [
+    {
+      id: 1,
+      amount: "2450.56",
+      name: "Coby Andoh",
+      background: colors.tertiary,
+      img: portrait1,
+    },
+    {
+      id: 1,
+      amount: "2450.56",
+      name: "Harleen Scot",
+      background: colors.primary,
+      img: portrait2,
+    },
+    {
+      id: 1,
+      amount: "2450.56",
+      name: "James Corbyn",
+      background: colors.accent,
+      img: portrait3,
+    },
+  ];
+
   return (
     <HomeContainer>
       <StatusBar style="dark" />
       <CardsSection data={cardsData} />
       <TransctionSection data={TransctionData} />
+      <SendMoneySection data={sendMoneyData} />
     </HomeContainer>
   );
 };
