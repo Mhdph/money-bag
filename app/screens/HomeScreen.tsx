@@ -1,5 +1,4 @@
-import { View, Text } from "react-native";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components/native";
 import { Container } from "../components/shated";
 import { colors } from "../config/color";
@@ -12,6 +11,10 @@ import SendMoneySection from "../components/SendMoney/SendMoneySection";
 import portrait1 from "./../assets/portraits/1.jpg";
 import portrait2 from "./../assets/portraits/2.jpg";
 import portrait3 from "./../assets/portraits/3.jpg";
+import { RootStackProps } from "../navigation/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
+
+export type Props = StackScreenProps<RootStackProps, "Home">;
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -19,7 +22,7 @@ const HomeContainer = styled(Container)`
   flex: 1;
 `;
 
-const HomeScreen = () => {
+const HomeScreen: FunctionComponent<Props> = () => {
   const cardsData = [
     {
       id: 1,
