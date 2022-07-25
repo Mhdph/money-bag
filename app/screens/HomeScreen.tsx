@@ -7,6 +7,7 @@ import logo1 from "../assets/cards/mc.png";
 import logo2 from "../assets/cards/visa_white.png";
 import { StatusBar } from "expo-status-bar";
 import CardsSection from "../components/cards/cardsSection";
+import TransctionSection from "../components/Transactions/TransactionSection";
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -39,10 +40,36 @@ const HomeScreen = () => {
     },
   ];
 
+  const TransctionData = [
+    {
+      id: 1,
+      amount: "86.00",
+      date: "14 Sep 2021",
+      title: "Taxi",
+      subtitle: "uber car",
+      art: {
+        background: colors.primary,
+        icon: "car",
+      },
+    },
+    {
+      id: 2,
+      amount: "286.00",
+      date: "14 Sep 2021",
+      title: "Shoppping",
+      subtitle: "Ali express",
+      art: {
+        background: colors.tertiary,
+        icon: "cart",
+      },
+    },
+  ];
+
   return (
     <HomeContainer>
       <StatusBar style="dark" />
       <CardsSection data={cardsData} />
+      <TransctionSection data={TransctionData} />
     </HomeContainer>
   );
 };

@@ -8,6 +8,16 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import RegularText from "../Text/RegularText";
 import SmallText from "../Text/SmallText";
 
+const CardBackground = styled.ImageBackground`
+  height: "75%";
+  border-radius: 25px;
+  overflow: "hidden";
+  background-color: ${colors.accent};
+  width: ${ScreenWidth * 0.67}px;
+  margin-right: 25px;
+  overflow: hidden;
+`;
+
 const CardTouchable = styled.TouchableHighlight`
   height: 100%;
   border-radius: 25px;
@@ -33,7 +43,7 @@ const Logo = styled.Image`
 const CardItem: FunctionComponent<CardProps> = (props) => {
   return (
     <ImageBackground style={styles.bgimage} source={card_bg}>
-      <CardTouchable>
+      <CardTouchable underlayColor={colors.secondary}>
         <ToucableView>
           <CardRow>
             <RegularText textStyles={{ color: colors.white }}>
@@ -63,10 +73,11 @@ export default CardItem;
 
 const styles = StyleSheet.create({
   bgimage: {
-    height: 190,
+    height: "75%",
     borderRadius: 25,
     overflow: "hidden",
     backgroundColor: colors.accent,
-    width: ScreenWidth * 0.8,
+    width: ScreenWidth * 0.67,
+    marginRight: 25,
   },
 });

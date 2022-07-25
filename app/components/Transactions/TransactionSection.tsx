@@ -4,7 +4,8 @@ import { colors } from "../../config/color";
 import { TransctionSectionProps } from "../../types";
 import RegularText from "../Text/RegularText";
 import SmallText from "../Text/SmallText";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import TransctionItem from "./TransctionItem";
 
 const TransctionSection: FunctionComponent<TransctionSectionProps> = (
   props
@@ -15,8 +16,18 @@ const TransctionSection: FunctionComponent<TransctionSectionProps> = (
         <RegularText textStyles={{ fontSize: 19, color: colors.primary }}>
           Transction
         </RegularText>
-        <SmallText textStyles={{ color: colors.secondary }}>Recent</SmallText>
+        <SmallText textStyles={{ color: colors.secondary }}>
+          Recent{" "}
+          <Ionicons name="caret-down" size={13} color={colors.graydark} />
+        </SmallText>
       </TransctionRow>
+      <TransactionList
+        data={props.data}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 25 }}
+        keyExtractor={({ id }: any) => id.toString()}
+        renderItem={({ item }: any) => <TransctionItem {...item} />}
+      />
     </TransctionSectionBackground>
   );
 };
@@ -30,8 +41,11 @@ const TransctionSectionBackground = styled.View`
   flex: 2;
 `;
 const TransctionRow = styled.View`
-  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+`;
+const TransactionList = styled.FlatList`
   width: 100%;
 `;

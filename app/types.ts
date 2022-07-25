@@ -26,7 +26,7 @@ export interface TransctionProps {
   date: string;
   art: {
     icon: string;
-    backgrund: string;
+    background: string;
   };
 }
 export interface TransctionSectionProps {
@@ -34,6 +34,6 @@ export interface TransctionSectionProps {
 }
 
 export interface TransctionAviProps {
-  icon: string;
-  backgrund: string;
+  icon: any;
+  background: string;
 }
