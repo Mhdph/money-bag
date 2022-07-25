@@ -49,3 +49,9 @@ export interface SendMoneyProps {
 export interface SendMoneySecctionProps {
   data: Array<SendMoneyProps>;
 }
+
+export interface AmountProps {
+  balance: number;
+}
+
+export interface BalanceCardProps extends CardProps {}
